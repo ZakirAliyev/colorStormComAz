@@ -1,11 +1,11 @@
 import './index.scss';
-import {Table, Modal, Upload, Form, message, Input} from "antd";
-import React, {useState} from "react";
-import {FiTrash} from "react-icons/fi";
-import {PlusOutlined} from "@ant-design/icons";
+import { Table, Modal, Upload, Form, message, Input } from "antd";
+import React, { useState } from "react";
+import { FiTrash } from "react-icons/fi";
+import { PlusOutlined } from "@ant-design/icons";
 import Swal from "sweetalert2";
-import {FaPlus} from "react-icons/fa";
-import {BANNER_URL} from "../../../constants.js";
+import { FaPlus } from "react-icons/fa";
+import { BANNER_URL } from "../../../constants.js";
 import {
     useDeleteBannerMutation,
     useGetAllBannersQuery,
@@ -13,7 +13,7 @@ import {
 } from "../../../service/usersApi.jsx";
 
 function Banners() {
-    const {data: brandsData, refetch} = useGetAllBannersQuery();
+    const { data: brandsData, refetch } = useGetAllBannersQuery();
     const brands = brandsData?.data;
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [fileList, setFileList] = useState([]);
@@ -32,7 +32,7 @@ function Banners() {
         setFileList([]);
     };
 
-    const handleUploadChange = ({fileList: newFileList}) => {
+    const handleUploadChange = ({ fileList: newFileList }) => {
         setFileList(newFileList);
     };
 
@@ -58,6 +58,7 @@ function Banners() {
         try {
             const values = await form.validateFields();
             const formData = new FormData();
+            console.log(values)
             formData.append("title", values.title);
             formData.append("subTitle", values.subTitle);
             formData.append("link", values.link);
@@ -67,9 +68,7 @@ function Banners() {
                     formData.append("file", file.originFileObj);
                 });
             }
-
             const response = await postCreateBrand(formData).unwrap();
-
             if (response?.statusCode === 201) {
                 message.success("Brand uğurla əlavə edildi!");
                 refetch();
@@ -152,7 +151,7 @@ function Banners() {
                 <button style={{
                     margin: 0
                 }} className="addButton112" onClick={showModal}>
-                    <FaPlus/>
+                    <FaPlus />
                 </button>
             </div>
             <Table
@@ -173,23 +172,22 @@ function Banners() {
                     <Form.Item
                         label="Başlıq"
                         name="title"
-                        rules={[{required: true, message: "Başlıq daxil edin!"}]}
+                        rules={[{ required: true, message: "Başlıq daxil edin!" }]}
                     >
-                        <Input placeholder="Başlıq"/>
+                        <Input placeholder="Başlıq" />
                     </Form.Item>
                     <Form.Item
                         label="Alt Başlıq"
                         name="subTitle"
-                        rules={[{required: true, message: "Alt başlıq daxil edin!"}]}
+                        rules={[{ required: true, message: "Alt başlıq daxil edin!" }]}
                     >
-                        <Input placeholder="Alt Başlıq"/>
+                        <Input placeholder="Alt Başlıq" />
                     </Form.Item>
                     <Form.Item
                         label="Link"
                         name="link"
-                        rules={[{required: true, message: "Link daxil edin!"}]}
                     >
-                        <Input placeholder="Link"/>
+                        <Input placeholder="Link" />
                     </Form.Item>
                     <Form.Item
                         label="Şəkillər"
@@ -197,8 +195,8 @@ function Banners() {
                         <Upload {...uploadProps} listType="picture-card" onChange={handleUploadChange}>
                             {fileList.length < 1 && (
                                 <div>
-                                    <PlusOutlined/>
-                                    <div style={{marginTop: 8}}>Şəkil əlavə et</div>
+                                    <PlusOutlined />
+                                    <div style={{ marginTop: 8 }}>Şəkil əlavə et</div>
                                 </div>
                             )}
                         </Upload>

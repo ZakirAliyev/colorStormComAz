@@ -5,8 +5,10 @@ import Header from "../../components/Header/index.jsx";
 import Lent from "../../components/Lent/index.jsx";
 import Portfolio from "../../components/Portfolio/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
+import {useGetAllBannersQuery} from "../../service/usersApi.jsx";
 
 function Home() {
+
     return (
         <section id={"home"}>
             <Navbar/>
