@@ -1,0 +1,136 @@
+#projects {
+  position: relative;
+  margin-top: -50px;
+
+  h2 {
+    color: white;
+    padding: 32px 64px;
+    font-size: 45px;
+    max-width: 600px;
+    position: absolute;
+  }
+
+  .box1 {
+    padding-top: 200px;
+  }
+
+  .box {
+    position: relative;
+    aspect-ratio: 1/1;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  img {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 25px;
+    object-fit: cover;
+  }
+
+  .layer {
+    position: absolute;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.35);
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  .wp {
+    position: relative;
+  }
+
+  .textWrapper {
+    color: white;
+    background-color: #60B5AD;
+    position: absolute;
+    bottom: -190px;
+    z-index: 10;
+    width: 95%;
+    padding: 16px 32px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    button {
+      background-color: transparent;
+      padding: 4px 32px;
+      border: 1px solid white;
+      color: white;
+      border-radius: 30px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      span {
+        cursor: pointer;
+      }
+    }
+
+    .icon {
+      font-size: 30px;
+    }
+  }
+
+  .textWrapper1 {
+    bottom: 0;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  p {
+    font-weight: 300;
+    margin-top: -10px;
+  }
+
+  @media screen and (max-width: 992px) {
+    .box1 {
+      padding-top: 0;
+    }
+    h2 {
+      color: white;
+      padding: 8px 16px;
+      text-align: center;
+      font-size: 25px;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .textWrapper {
+      position: absolute;
+      bottom: 10px;
+      z-index: 10;
+      width: 93%;
+      padding: 16px;
+
+      button {
+        font-size: 12px;
+        padding: 5px 10px;
+      }
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 12px;
+      font-weight: 300;
+      margin-top: -5px;
+    }
+  }
+}

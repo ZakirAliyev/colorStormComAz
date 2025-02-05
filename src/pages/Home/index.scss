@@ -1,0 +1,62 @@
+#home {
+
+  #projects1 {
+    margin-top: 30px;
+  }
+
+  h1 {
+    font-size: 120px;
+    color: white;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-top: 100px;
+    padding: 0 16px;
+  }
+
+  .img {
+    background-image: url("/src/assets/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 25px;
+  }
+
+  .layer {
+    width: 100%;
+    border-radius: 25px;
+    aspect-ratio: 1 / 1;
+    background-color: rgba(0, 0, 0, 0.35);
+    position: absolute;
+  }
+
+  @media screen and (max-width: 1250px) {
+    h1 {
+      font-size: 100px;
+      margin-top: 60px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    h1 {
+      font-size: 70px;
+      margin-top: 30px;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    h1 {
+      font-size: 55px;
+      margin-top: 0;
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    h1 {
+      font-size: 25px;
+      max-width: 350px;
+      width: 100%;
+    }
+  }
+}

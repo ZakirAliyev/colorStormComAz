@@ -1,0 +1,6 @@
+export const IMAGE_URL = 'https://api.colorstorm.com.az/files/banners/'
+export const PRODUCT_URL = 'https://api.colorstorm.com.az/files/pictures/'
+export const CARD_URL = 'https://api.colorstorm.com.az/files/services/'
+export const CARD_BANNER_URL = 'https://api.colorstorm.com.az/files/workcardimages/'
+export const BRAND_URL = 'https://api.colorstorm.com.az/files/brands/'
+export const BANNER_URL = 'https://api.colorstorm.com.az/files/banners/'

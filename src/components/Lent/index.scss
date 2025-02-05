@@ -1,0 +1,27 @@
+#lent {
+  height: 100px;
+  background-color: #60B5AD;
+  color: white;
+  width: 106%;
+  transform: rotate(-5deg);
+  position: relative;
+  left: -3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 32px;
+  margin: 90px 0;
+
+  img {
+    object-fit: contain;
+    height: 100%;
+    filter: brightness(0) invert(1);
+  }
+
+  @media screen and (max-width: 992px) {
+    height: 60px;
+    padding: 20px;
+    margin: 20px 0 100px;
+  }
+}

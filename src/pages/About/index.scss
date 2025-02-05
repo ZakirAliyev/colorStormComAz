@@ -1,0 +1,35 @@
+#about {
+  margin-top: 110px;
+  margin-bottom: 45px;
+  padding: 0 8px;
+  color: white;
+
+  h2, p {
+    text-align: start;
+  }
+
+  .h2, .p {
+    text-align: center;
+  }
+
+  p {
+    padding: 10px 0;
+  }
+
+  h2 {
+    margin: 10px 0 20px;
+    color: white;
+    font-weight: 500;
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 90%;
+      border-radius: 25px;
+    }
+  }
+}
