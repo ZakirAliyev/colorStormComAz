@@ -138,6 +138,26 @@ export const usersApi = createApi({
                 headers: {'Content-Type': 'application/json'},
             }),
         }),
+        createOrder: builder.mutation({
+            query: (order) => ({
+                url: '/Order/create-order',
+                method: 'POST',
+                body: order,
+                headers: {'Content-Type': 'application/json'},
+            }),
+        }),
+        getAllOrders: builder.query({
+            query: () => ({
+                url: `/Order/get-all-orders`,
+            }),
+        }),
+        deleteOrder: builder.mutation({
+            query: (id) => ({
+                url: `/Order/delete-order/${id}`,
+                method: 'DELETE',
+                headers: {'Content-Type': 'application/json'},
+            }),
+        }),
     }),
 })
 export const {
@@ -160,4 +180,7 @@ export const {
     useGetAllBannersQuery,
     usePostCreateBannerMutation,
     useDeleteBannerMutation,
+    useCreateOrderMutation,
+    useGetAllOrdersQuery,
+    useDeleteOrderMutation
 } = usersApi

@@ -5,9 +5,14 @@ import Header from "../../components/Header/index.jsx";
 import Lent from "../../components/Lent/index.jsx";
 import Portfolio from "../../components/Portfolio/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
-import {useGetAllBannersQuery} from "../../service/usersApi.jsx";
+import {useGetAllProductsQuery, useGetAllServiceQuery} from "../../service/usersApi.jsx";
+import ServiceComponent from "../../components/ServiceComponent/index.jsx";
+import Product from "../../components/Product/index.jsx";
 
 function Home() {
+
+    const {data: getAllProducts} = useGetAllProductsQuery()
+    const products = getAllProducts?.data
 
     return (
         <section id={"home"}>

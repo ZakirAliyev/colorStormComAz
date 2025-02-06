@@ -1,52 +1,76 @@
-import './index.scss'
-
-import React from 'react';
+import './index.scss';
+import React, { useState, useEffect } from 'react';
+import { useGetAllBrandsQuery } from "../../service/usersApi.jsx";
+import { BRAND_URL } from "../../constants.js";
 
 function Lent() {
+    const { data: getAllBrands } = useGetAllBrandsQuery();
+    const brands = getAllBrands?.data || [];
+
+    const [images, setImages] = useState([]);
+
+    useEffect(() => {
+        if (brands.length > 0) {
+            setImages(brands.map((brand, index) => (
+                <img
+                    key={index}
+                    src={BRAND_URL + brand.imageName}
+                    alt={brand.name || "Brand Image"}
+                />
+            )));
+        }
+    }, [brands]);
+
     return (
-        <section id={"lent"}>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"}
-                alt={"Image"}/>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/2560px-Meta_Platforms_Inc._logo.svg.png"}
-                alt={"Image"}/>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"}
-                alt={"Image"}/>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/2560px-Meta_Platforms_Inc._logo.svg.png"}
-                alt={"Image"}/>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"}
-                alt={"Image"}/>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/2560px-Meta_Platforms_Inc._logo.svg.png"}
-                alt={"Image"}/>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"}
-                alt={"Image"}/>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/2560px-Meta_Platforms_Inc._logo.svg.png"}
-                alt={"Image"}/>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"}
-                alt={"Image"}/>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/2560px-Meta_Platforms_Inc._logo.svg.png"}
-                alt={"Image"}/>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"}
-                alt={"Image"}/>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/2560px-Meta_Platforms_Inc._logo.svg.png"}
-                alt={"Image"}/>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"}
-                alt={"Image"}/>
-            <img
-                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/2560px-Meta_Platforms_Inc._logo.svg.png"}
-                alt={"Image"}/>
+        <section id="lent">
+            <div className="scroll-container">
+                <div className="scroll-content">
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                    {images}
+                </div>
+            </div>
         </section>
     );
 }

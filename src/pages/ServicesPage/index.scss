@@ -1,0 +1,50 @@
+#servicesPage {
+
+  .productText {
+    color: white;
+    text-align: center;
+    font-size: 31.85px;
+    font-weight: 800;
+    line-height: 45.4px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    text-transform: uppercase;
+    margin-top: 75px;
+  }
+
+  .productText1 {
+    color: #828282;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .btnWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .btnbtn2 {
+      max-width: 350px;
+      width: 100%;
+      font-size: 35.9px;
+      font-weight: 700;
+      line-height: 34.1px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 20px;
+      border-radius: 25px;
+      margin-top: 50px;
+    }
+  }
+}

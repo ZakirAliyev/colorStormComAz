@@ -4,6 +4,7 @@ import Product from "../../components/Product/index.jsx";
 import Navbar from "../../components/Navbar/index.jsx";
 import image1 from "/src/assets/bg.jpg"
 import Footer from "../../components/Footer/index.jsx";
+import {useGetAllProductsQuery} from "../../service/usersApi.jsx";
 
 function Products() {
     const [selectedCategory, setSelectedCategory] = useState("MONİTORLAR");
@@ -11,6 +12,9 @@ function Products() {
     const handleCategoryClick = (category) => {
         setSelectedCategory(category);
     };
+
+    const {data: getAllProducts} = useGetAllProductsQuery()
+    const products = getAllProducts?.data;
 
     return (
         <>
@@ -47,18 +51,9 @@ function Products() {
                         </div>
                     </div>
                     <div className={"row"}>
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
-                        <Product/>
+                        {products && products.map((product) => (
+                            <Product product={product} key={product.id} />
+                        ))}
                     </div>
                 </div>
             </section>

@@ -8,6 +8,7 @@ import Contact from "../pages/Contact/index.jsx";
 import AdminPanel from "../pages/AdminPanel/index.jsx";
 import AdminLogin from "../pages/AdminLogin/index.jsx";
 import Zakir from "../pages/index.jsx";
+import ServicesPage from "../pages/ServicesPage/index.jsx";
 
 export const ROUTES = [
     {
@@ -41,6 +42,10 @@ export const ROUTES = [
             {
                 path: '/cp',
                 element: <AdminLogin/>
+            },
+            {
+                path: '/services',
+                element: <ServicesPage/>
             },
             {
                 path: '/cp/dashboard/products',
